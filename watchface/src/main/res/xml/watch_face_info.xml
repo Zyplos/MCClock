@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WatchFaceInfo>
+    <!-- Only "Preview" is required. -->
+    <Preview value="@drawable/preview" />
+
+    <!--  for the watchface menu select and device demo mode  -->
+    <Category value="CATEGORY_EMPTY" />
+    <AvailableInRetail value="true" />
+
+    <!-- Required for Flavors -->
+    <MultipleInstancesAllowed value="true" />
+
+    <!--  for complications  -->
+    <Editable value="false" />
+
+    <!-- Required for Flavors -->
+    <FlavorsSupported value="true" />
+</WatchFaceInfo>
