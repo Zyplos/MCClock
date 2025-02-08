@@ -1,40 +1,428 @@
-<WatchFace width="450" height="450" clipShape="CIRCLE">
-    <!-- Remainder of your Watch Face Format definition here. -->
-    <!-- If this file defines a watch face for a circular device shape, place
-         resources used in this file in the "/res/drawable-nodpi" directory. -->
-    <!-- If this file defines a watch face for a rectangular or other
-         non-circular shape, place resources ued in this file in the
-         "/res/drawable-notround-nodpi" directory. -->
-    <Metadata key="CLOCK_TYPE" value="DIGITAL"/>
-    <Metadata key="PREVIEW_TIME" value="10:08:32"/>
+<?xml version="1.0" encoding="utf-8"?>
+<WatchFace
+    width="450"
+    height="450"
+    clipShape="CIRCLE"
+    >
     <Scene backgroundColor="#ff000000">
-        <DigitalClock x="0" y="0" width="450" height="450">
-            <!-- For further attributes see:
-                https://developer.android.com/training/wearables/wff/clock/time-text -->
-            <!-- SYNC_TO_DEVICE specifies to respect the device 12/24h setting -->
-            <!-- Interactive mode version-->
-            <TimeText format="hh:mm" hourFormat="SYNC_TO_DEVICE" align="CENTER" x="0" y="175" width="450" height="100" alpha="255">
-                <Variant mode="AMBIENT" target="alpha" value="0"/>
-                <!-- Specifying the watch's default font-family by using SYNC_TO_DEVICE instead of a named family -->
-                <Font family="SYNC_TO_DEVICE" size="128" weight="NORMAL" slant="NORMAL" color="#ffffffff"/>
-            </TimeText>
-            <!-- Ambient mode version - thinner weight -->
-            <TimeText format="hh:mm" hourFormat="SYNC_TO_DEVICE" align="CENTER" x="0" y="175" width="450" height="100" alpha="0">
-                <!-- Specifying the watch's default family by using SYNC_TO_DEVICE -->
-                <Variant mode="AMBIENT" target="alpha" value="255"/>
-                <Font family="SYNC_TO_DEVICE" size="128" weight="THIN" slant="NORMAL" color="#ffffffff"/>
-            </TimeText>
-        </DigitalClock>
-        <Group x="0" y="0" width="450" height="450" name="hello_world">
-            <PartText x="0" y="285" width="450" height="50">
-                <Variant mode="AMBIENT" target="alpha" value="0"/>
-                <Text align="CENTER">
-                    <!-- Demonstrates using Android string resources for localization -->
-                    <Font family="SYNC_TO_DEVICE" size="36" color="#ffffffff">
-                        <Template>%s<Parameter expression="app_name"/></Template>
-                    </Font>
-                </Text>
-            </PartText>
+        <Group name="main" x="0" y="0" width="450" height="450">
+            <Condition>
+                <Expressions>
+                    <!-- Image for 12:00 PM (noon) -->
+                    <Expression name="compare_0">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==32</Expression>
+
+                    <!-- Images for 12:00 AM to 11:59 AM -->
+                    <Expression name="compare_32">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==0</Expression>
+                    <Expression name="compare_33">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==1</Expression>
+                    <Expression name="compare_34">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==2</Expression>
+                    <Expression name="compare_35">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==3</Expression>
+                    <Expression name="compare_36">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==4</Expression>
+                    <Expression name="compare_37">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==5</Expression>
+                    <Expression name="compare_38">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==6</Expression>
+                    <Expression name="compare_39">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==7</Expression>
+                    <Expression name="compare_40">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==8</Expression>
+                    <Expression name="compare_41">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==9</Expression>
+                    <Expression name="compare_42">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==10</Expression>
+                    <Expression name="compare_43">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==11</Expression>
+                    <Expression name="compare_44">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==12</Expression>
+                    <Expression name="compare_45">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==13</Expression>
+                    <Expression name="compare_46">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==14</Expression>
+                    <Expression name="compare_47">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==15</Expression>
+                    <Expression name="compare_48">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==16</Expression>
+                    <Expression name="compare_49">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==17</Expression>
+                    <Expression name="compare_50">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==18</Expression>
+                    <Expression name="compare_51">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==19</Expression>
+                    <Expression name="compare_52">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==20</Expression>
+                    <Expression name="compare_53">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==21</Expression>
+                    <Expression name="compare_54">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==22</Expression>
+                    <Expression name="compare_55">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==23</Expression>
+                    <Expression name="compare_56">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==24</Expression>
+                    <Expression name="compare_57">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==25</Expression>
+                    <Expression name="compare_58">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==26</Expression>
+                    <Expression name="compare_59">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==27</Expression>
+                    <Expression name="compare_60">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==28</Expression>
+                    <Expression name="compare_61">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==29</Expression>
+                    <Expression name="compare_62">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==30</Expression>
+                    <Expression name="compare_63">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==31</Expression>
+
+
+                    <!-- Images for 12:00 PM to 11:59 PM -->
+                    <Expression name="compare_1">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==33</Expression>
+                    <Expression name="compare_2">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==34</Expression>
+                    <Expression name="compare_3">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==35</Expression>
+                    <Expression name="compare_4">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==36</Expression>
+                    <Expression name="compare_5">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==37</Expression>
+                    <Expression name="compare_6">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==38</Expression>
+                    <Expression name="compare_7">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==39</Expression>
+                    <Expression name="compare_8">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==40</Expression>
+                    <Expression name="compare_9">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==41</Expression>
+                    <Expression name="compare_10">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==42</Expression>
+                    <Expression name="compare_11">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==43</Expression>
+                    <Expression name="compare_12">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==44</Expression>
+                    <Expression name="compare_13">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==45</Expression>
+                    <Expression name="compare_14">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==46</Expression>
+                    <Expression name="compare_15">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==47</Expression>
+                    <Expression name="compare_16">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==48</Expression>
+                    <Expression name="compare_17">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==49</Expression>
+                    <Expression name="compare_18">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==50</Expression>
+                    <Expression name="compare_19">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==51</Expression>
+                    <Expression name="compare_20">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==52</Expression>
+                    <Expression name="compare_21">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==53</Expression>
+                    <Expression name="compare_22">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==54</Expression>
+                    <Expression name="compare_23">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==55</Expression>
+                    <Expression name="compare_24">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==56</Expression>
+                    <Expression name="compare_25">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==57</Expression>
+                    <Expression name="compare_26">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==58</Expression>
+                    <Expression name="compare_27">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==59</Expression>
+                    <Expression name="compare_28">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==60</Expression>
+                    <Expression name="compare_29">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==61</Expression>
+                    <Expression name="compare_30">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==62</Expression>
+                    <Expression name="compare_31">floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))==63</Expression>
+                </Expressions>
+
+                <Compare expression="compare_0">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_0"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_1">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_1"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_2">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_2"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_3">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_3"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_4">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_4"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_5">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_5"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_6">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_6"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_7">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_7"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_8">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_8"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_9">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_9"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_10">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_10"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_11">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_11"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_12">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_12"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_13">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_13"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_14">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_14"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_15">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_15"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_16">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_16"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_17">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_17"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_18">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_18"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_19">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_19"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_20">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_20"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_21">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_21"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_22">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_22"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_23">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_23"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_24">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_24"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_25">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_25"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_26">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_26"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_27">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_27"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_28">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_28"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_29">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_29"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_30">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_30"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_31">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_31"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_32">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_32"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_33">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_33"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_34">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_34"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_35">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_35"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_36">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_36"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_37">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_37"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_38">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_38"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_39">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_39"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_40">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_40"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_41">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_41"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_42">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_42"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_43">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_43"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_44">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_44"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_45">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_45"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_46">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_46"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_47">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_47"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_48">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_48"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_49">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_49"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_50">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_50"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_51">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_51"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_52">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_52"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_53">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_53"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_54">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_54"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_55">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_55"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_56">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_56"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_57">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_57"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_58">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_58"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_59">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_59"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_60">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_60"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_61">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_61"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_62">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_62"/>
+                    </PartImage>
+                </Compare>
+                <Compare expression="compare_63">
+                    <PartImage x="0" y="0" width="450" height="450">
+                        <Image resource="time_63"/>
+                    </PartImage>
+                </Compare>
+            </Condition>
         </Group>
+
+        <!-- frame on top of everything -->
+        <PartImage x="0" y="0" width="450" height="450" alpha="255">
+            <Image resource="frame_transparent"/>
+            <Variant mode="AMBIENT" target="alpha" value="0"/>
+        </PartImage>
+
+        <PartImage x="0" y="0" width="450" height="450" alpha="0">
+            <Image resource="frame_transparent_ambient"/>
+            <Variant mode="AMBIENT" target="alpha" value="255"/>
+        </PartImage>
+
+<!--        <Group x="0" y="0" width="450" height="450" name="hello_world">-->
+<!--            <PartText x="0" y="285" width="450" height="50">-->
+<!--                <Text align="CENTER">-->
+<!--                    &lt;!&ndash; Demonstrates using Android string resources for localization &ndash;&gt;-->
+<!--                    <Font family="SYNC_TO_DEVICE" size="36" color="#ff3e3e">-->
+<!--                        <Template>%d<Parameter expression="floor(([HOUR_0_23]*60 + [MINUTE])/(24*60.0/64.0))"></Parameter></Template>-->
+<!--                    </Font>-->
+<!--                </Text>-->
+<!--            </PartText>-->
+<!--        </Group>-->
     </Scene>
 </WatchFace>
